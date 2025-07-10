@@ -2,7 +2,7 @@
 import { useEffect, useState } from 'react'
 import supabase from '@/lib/supabase'
 import AuthModal from './AuthModal'
-import ThemeToggle from './ThemeToggle'
+
 
 export default function Navbar() {
   const [user, setUser] = useState(null)
@@ -26,8 +26,7 @@ export default function Navbar() {
           <a href="/upload" className="hover:underline">Upload</a>
           <a href="/dashboard" className="hover:underline">Dashboard</a>
           <a href="/history" className="hover:underline">History</a>
-          <ThemeToggle/>
-
+          
 
           {user ? (
             <span className="text-sm text-gray-600">Hi, {user.email}</span>

@@ -10,6 +10,14 @@ const faqs = [
     answer: 'A DeepFake is a synthetic media where a person in an existing image or video is replaced with someone else using artificial intelligence.',
   },
   {
+    question: 'Whats the function of the application',
+    answer: 'The main function for this deepfake application is to ensure accuracy n sharing of information making it sare for the authenticity of the information being shared',
+  },
+  {
+    question: 'Is This application going to replace AI Contents',
+    answer: 'No, DeepFake is only going to verify the authenticity of information being shared nothing else. Its main function is to determine weather a video or image or speach is AI Edited or real ',
+  },
+  {
     question: 'How accurate are the results?',
     answer: 'This dashboard is a mockup simulation. In production, detection accuracy would depend on the ML model used.',
   },
