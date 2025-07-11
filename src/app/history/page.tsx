@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react'
 import Navbar from '@/components/Navbar'
 import { ScanResult } from '@/types/scanResult'
 import Footer from '@/components/Footer'
+import Image from 'next/image';
 
 export default function HistoryPage() {
   const [results, setResults] = useState<ScanResult[]>([])
@@ -78,7 +79,7 @@ export default function HistoryPage() {
                 className="w-full rounded mb-4 max-h-60"
               />
             ) : (
-              <img
+              <Image
                 src={selected.fileUrl}
                 alt="preview"
                 className="w-full rounded mb-4"

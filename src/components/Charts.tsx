@@ -11,7 +11,16 @@ import {
   Cell,
 } from 'recharts'
 
-export function LineChart({ data }: any) {
+// Define a result type (should match your ScanResult)
+type ScanResult = {
+  createdAt: string
+}
+
+type LineChartProps = {
+  data: ScanResult[]
+}
+
+export function LineChart({ data }: LineChartProps) {
   const grouped = groupByMonth(data)
 
   return (
@@ -27,7 +36,11 @@ export function LineChart({ data }: any) {
   )
 }
 
-export function PieChartComponent({ data }: any) {
+type PieChartComponentProps = {
+  data: [number, number] // [fake, real]
+}
+
+export function PieChartComponent({ data }: PieChartComponentProps) {
   const COLORS = ['#ef4444', '#10b981']
   const pieData = [
     { name: 'Fake', value: data[0] },
@@ -55,8 +68,13 @@ export function PieChartComponent({ data }: any) {
   )
 }
 
-function groupByMonth(data: any[]) {
-  const months: { [key: string]: number } = {}
+type GroupedMonthData = {
+  month: string
+  count: number
+}
+
+function groupByMonth(data: ScanResult[]): GroupedMonthData[] {
+  const months: Record<string, number> = {}
 
   data.forEach((item) => {
     const date = new Date(item.createdAt)

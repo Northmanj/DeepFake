@@ -1,11 +1,13 @@
 'use client'
+
 import { useEffect, useState } from 'react'
+import Link from 'next/link'
+import type { User } from '@supabase/supabase-js'
 import supabase from '@/lib/supabase'
 import AuthModal from './AuthModal'
 
-
 export default function Navbar() {
-  const [user, setUser] = useState(null)
+  const [user, setUser] = useState<User | null>(null)
   const [showAuthModal, setShowAuthModal] = useState(false)
 
   useEffect(() => {
@@ -19,14 +21,13 @@ export default function Navbar() {
   return (
     <>
       <nav className="bg-white px-6 py-4 shadow flex justify-between items-center">
-      <h1 className="text-xl font-bold text-blue-600">DEEPFAKE</h1>
+        <h1 className="text-xl font-bold text-blue-600">DEEPFAKE</h1>
 
         <div className="flex gap-4 items-center">
-          <a href="/" className="hover:underline">Home</a>
-          <a href="/upload" className="hover:underline">Upload</a>
-          <a href="/dashboard" className="hover:underline">Dashboard</a>
-          <a href="/history" className="hover:underline">History</a>
-          
+          <Link href="/" className="hover:underline">Home</Link>
+          <Link href="/upload" className="hover:underline">Upload</Link>
+          <Link href="/dashboard" className="hover:underline">Dashboard</Link>
+          <Link href="/history" className="hover:underline">History</Link>
 
           {user ? (
             <span className="text-sm text-gray-600">Hi, {user.email}</span>
@@ -41,7 +42,6 @@ export default function Navbar() {
         </div>
       </nav>
 
-      {/* Show modal when triggered */}
       {showAuthModal && (
         <AuthModal isOpen={showAuthModal} onClose={() => setShowAuthModal(false)} />
       )}

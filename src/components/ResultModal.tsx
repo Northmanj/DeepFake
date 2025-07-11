@@ -1,6 +1,7 @@
 'use client'
 import { useEffect } from 'react'
 import { ScanResult } from '@/types/scanResult'
+import Image from 'next/image'
 
 export default function ResultModal({ result, onClose }: {
   result: ScanResult | null,
@@ -28,7 +29,7 @@ export default function ResultModal({ result, onClose }: {
           {result.fileUrl.endsWith('.mp4') ? (
             <video controls src={result.fileUrl} className="rounded w-full max-h-60" />
           ) : (
-            <img src={result.fileUrl} alt={result.filename} className="rounded w-full max-h-60 object-contain" />
+            <Image src={result.fileUrl} alt={result.filename} className="rounded w-full max-h-60 object-contain" />
           )}
         </div>
 
