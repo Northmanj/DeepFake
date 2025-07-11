@@ -2,7 +2,11 @@
 import { useState } from 'react'
 import Image from 'next/image'
 
-export default function AuthModal({ isOpen, onClose }) {
+type AuthModalProps = {
+  isOpen: boolean
+  onClose: () => void
+}
+export default function AuthModal({ isOpen, onClose }: AuthModalProps) {
   const [isLogin, setIsLogin] = useState(true)
 
   if (!isOpen) return null
