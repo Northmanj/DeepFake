@@ -103,7 +103,7 @@ export default function UploadPage() {
           {result && (
             <div className="mt-6 text-center">
               <h2 className="text-xl font-semibold mb-2">{result.filename}</h2>
-              {file.type.startsWith('image') ? (
+              {file && file.type.startsWith('image') ? (
                 <Image
                   src={result.fileUrl}
                   alt="Preview"
