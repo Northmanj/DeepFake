@@ -58,17 +58,17 @@ export default function UploadPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-black-50 font-black">
       <Navbar />
       <div className="max-w-3xl mx-auto px-4 py-12">
         <h1 className="text-3xl font-bold text-center mb-2">DeepFake Upload & Scan</h1>
-        <p className="text-center text-gray-500 mb-8">
+        <p className="text-center text-black-500 mb-8">
           Upload a video or image to check for AI manipulation.
         </p>
 
-        <div className="bg-white rounded-lg p-6 shadow-md">
+        <div className="bg-black rounded-lg p-6 shadow-md">
           {!file && (
-            <label className="flex flex-col items-center justify-center border-2 border-dashed border-gray-300 rounded-lg p-8 text-gray-500 cursor-pointer hover:border-blue-500 transition">
+            <label className="flex flex-col items-center justify-center border-2 border-dashed border-gray-300 rounded-lg p-8 text-blue-500 cursor-pointer hover:border-blue-500 transition">
               <span className="mb-2">Click or drag a file here to upload</span>
               <input type="file" accept="image/*,video/*" onChange={handleFileChange} hidden />
             </label>
@@ -76,7 +76,7 @@ export default function UploadPage() {
 
           {file && !uploading && !result && (
             <div className="text-center">
-              <p className="mb-2 text-sm text-gray-600">
+              <p className="mb-2 text-sm text-blue-600">
                 File selected: <strong>{file.name}</strong>
               </p>
               <button

@@ -23,7 +23,7 @@ export default function ResultModal({ result, onClose }: {
         <button onClick={onClose} className="absolute top-2 right-2 text-gray-500 hover:text-red-500 text-xl">✕</button>
 
         <h2 className="text-xl font-bold mb-2">{result.filename}</h2>
-        <p className="text-sm text-gray-500 mb-4">Scanned on: {new Date(result.createdAt).toLocaleString()}</p>
+        <p className="text-sm text-black-500 mb-4">Scanned on: {new Date(result.createdAt).toLocaleString()}</p>
 
         <div className="mb-4">
           {result.fileUrl.endsWith('.mp4') ? (

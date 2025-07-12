@@ -23,7 +23,7 @@ export default function Navbar() {
       <nav className="bg-white px-6 py-4 shadow flex justify-between items-center">
         <h1 className="text-xl font-bold text-blue-600">DEEPFAKE</h1>
 
-        <div className="flex gap-4 items-center">
+        <div className="flex gap-4 items-center text-black-600 font-bold">
           <Link href="/" className="hover:underline">Home</Link>
           <Link href="/upload" className="hover:underline">Upload</Link>
           <Link href="/dashboard" className="hover:underline">Dashboard</Link>

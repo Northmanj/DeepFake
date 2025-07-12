@@ -85,7 +85,7 @@ export default function HistoryPage() {
                 className="w-full rounded mb-4"
               />
             )}
-            <p className="mb-2 text-sm text-gray-700">
+            <p className="mb-2 text-sm text-black-700">
               DeepFake Score: <strong>{selected.score}%</strong>
             </p>
             <div className="w-full h-2 bg-gray-200 rounded-full mb-4">
